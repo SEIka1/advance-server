@@ -13,3 +13,5 @@ lib: Ws2_32.lib
 ```
 https://github.com/SEIka1/advance-server
 ```
+
+## you can give a star for this repo, i will be glad :3 ❤️
