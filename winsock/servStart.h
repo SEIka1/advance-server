@@ -9,4 +9,4 @@
 #pragma comment(lib, "Ws2_32.lib")
 
 int server_init();
-void UpdateServerStatus(const wchar_t* status);
+extern void UpdateServerStatus(const wchar_t* status);

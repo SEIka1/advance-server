@@ -10,6 +10,8 @@
 
 #define MAX_LOADSTRING 100
 
+std::wstring g_serverStatus = L"Сервер не запущен";
+
 HINSTANCE hInst;
 WCHAR szTitle[MAX_LOADSTRING];
 WCHAR szWindowClass[MAX_LOADSTRING];
@@ -27,7 +29,8 @@ INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
 void UpdateServerStatus(const wchar_t* status) {
     if (g_hEditServer) {
-        SetWindowText(g_hEditServer, status);
+        g_serverStatus = status;
+        PostMessage(g_hEditServer, WM_SETTEXT, 0, (LPARAM)status);
     }
 }
 
@@ -129,6 +132,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                 g_hEditServer = CreateWindow(L"EDIT", L"Статус сервера...",
                     WS_CHILD | WS_VISIBLE | WS_BORDER | ES_MULTILINE | ES_READONLY,
                     20, 80, 350, 200, g_hServerWindow, (HMENU)ID_EDIT_SERVER_STATUS, hInst, NULL);
+
+                SetTimer(hWnd, TIMER_UPDATE_STATUS, TIMER_INTERVAL, NULL);
             }
             ShowWindow(g_hServerWindow, SW_SHOW);
             if (g_hClientWindow) ShowWindow(g_hClientWindow, SW_HIDE);
@@ -154,13 +159,27 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
         case ID_BUTTON_START_SERVER:
         {
+            MessageBox(hWnd, L"Testing direct server_init call", L"Debug", MB_OK);
+            int result = server_init();
+            wchar_t debugMsg[256];
+            swprintf(debugMsg, 256, L"server_init() returned: %d", result);
+            MessageBox(hWnd, debugMsg, L"Debug", MB_OK);
+            UpdateServerStatus(L"Нажата кнопка запуска сервера...");
+            EnableWindow(g_hButtonServer, FALSE);
+
             std::thread serverThread([]() {
-                UpdateServerStatus(L"Инициализация сервера...");
-                if (server_init() == 0) {
-                    UpdateServerStatus(L"Сервер успешно запущен и прослушивает порт...");
+                UpdateServerStatus(L"Поток сервера запущен...");
+                Sleep(1000);
+
+                UpdateServerStatus(L"Вызов server_init()...");
+                int result = server_init();
+
+                if (result == 0) {
+                    UpdateServerStatus(L"server_init() успешно выполнен...");
                 }
                 else {
-                    UpdateServerStatus(L"Ошибка запуска сервера!");
+                    UpdateServerStatus(L"server_init() вернул ошибку...");
+                    EnableWindow(g_hButtonServer, TRUE);
                 }
                 });
             serverThread.detach();
@@ -192,7 +211,21 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     }
     break;
     case WM_DESTROY:
+        KillTimer(hWnd, TIMER_UPDATE_STATUS);
         PostQuitMessage(0);
+        break;
+    case WM_TIMER:
+        if (wParam == TIMER_UPDATE_STATUS) {
+            if (g_hEditServer && IsWindowVisible(g_hServerWindow)) {
+                SetWindowText(g_hEditServer, g_serverStatus.c_str());
+            }
+        }
+        break;
+    case WM_SETTEXT:
+        if (g_hEditServer && hWnd == g_hEditServer) {
+            SetWindowText(g_hEditServer, (LPCWSTR)lParam);
+            return TRUE;
+        }
         break;
     default:
         return DefWindowProc(hWnd, message, wParam, lParam);
