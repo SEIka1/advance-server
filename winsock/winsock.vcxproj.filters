@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков\server">
+      <UniqueIdentifier>{bd844e5d-f068-4676-81a5-95ac28febfd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\client">
+      <UniqueIdentifier>{b02a6b0e-3c36-4e36-ab86-14d4052b3237}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\server\include">
+      <UniqueIdentifier>{8307ed1b-1483-4b7c-a0ea-df33df25fbcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\server\rsc">
+      <UniqueIdentifier>{052fe9de-b78e-45b1-91a9-e1a484257427}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\client\include">
+      <UniqueIdentifier>{afd5748f-dcdd-420d-8e4f-0160aeca35c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\client\rsc">
+      <UniqueIdentifier>{4f881b06-aa5e-4659-b29f-7371adbc388d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="winsock.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\OneDrive\Desktop\Новая папка\server_include_init.h">
+      <Filter>Файлы заголовков\server\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\OneDrive\Desktop\Новая папка\server_resource_init.h">
+      <Filter>Файлы заголовков\server\rsc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\OneDrive\Desktop\Новая папка\client_include_init.h">
+      <Filter>Файлы заголовков\client\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\OneDrive\Desktop\Новая папка\client_resource_init.h">
+      <Filter>Файлы заголовков\client\rsc</Filter>
+    </ClInclude>
+    <ClInclude Include="servStart.h">
+      <Filter>Файлы заголовков\server</Filter>
+    </ClInclude>
+    <ClInclude Include="cltStart.h">
+      <Filter>Файлы заголовков\client</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="winsock.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\OneDrive\Desktop\Новая папка\sockExt_clientInit.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\OneDrive\Desktop\Новая папка\sockExt_servInit.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="winsock.rc">
+      <Filter>Файлы ресурсов</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="winsock.ico">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Desktop\dev\icons\umaru.ico">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
