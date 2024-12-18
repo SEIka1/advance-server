@@ -45,33 +45,33 @@
     <ClInclude Include="winsock.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\OneDrive\Desktop\Новая папка\server_include_init.h">
-      <Filter>Файлы заголовков\server\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\OneDrive\Desktop\Новая папка\server_resource_init.h">
-      <Filter>Файлы заголовков\server\rsc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\OneDrive\Desktop\Новая папка\client_include_init.h">
-      <Filter>Файлы заголовков\client\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\OneDrive\Desktop\Новая папка\client_resource_init.h">
-      <Filter>Файлы заголовков\client\rsc</Filter>
-    </ClInclude>
     <ClInclude Include="servStart.h">
       <Filter>Файлы заголовков\server</Filter>
     </ClInclude>
     <ClInclude Include="cltStart.h">
       <Filter>Файлы заголовков\client</Filter>
     </ClInclude>
+    <ClInclude Include="client_include_init.h">
+      <Filter>Файлы заголовков\client\include</Filter>
+    </ClInclude>
+    <ClInclude Include="client_resource_init.h">
+      <Filter>Файлы заголовков\client\rsc</Filter>
+    </ClInclude>
+    <ClInclude Include="server_include_init.h">
+      <Filter>Файлы заголовков\server\include</Filter>
+    </ClInclude>
+    <ClInclude Include="server_resource_init.h">
+      <Filter>Файлы заголовков\server\rsc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="winsock.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Desktop\Новая папка\sockExt_clientInit.cpp">
+    <ClCompile Include="sockExt_clientInit.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Desktop\Новая папка\sockExt_servInit.cpp">
+    <ClCompile Include="sockExt_servInit.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -87,7 +87,7 @@
     <Image Include="winsock.ico">
       <Filter>Файлы ресурсов</Filter>
     </Image>
-    <Image Include="..\..\..\..\OneDrive\Desktop\dev\icons\umaru.ico">
+    <Image Include="umaru.ico">
       <Filter>Файлы ресурсов</Filter>
     </Image>
   </ItemGroup>

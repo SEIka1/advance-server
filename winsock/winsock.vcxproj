@@ -127,28 +127,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\OneDrive\Desktop\Новая папка\client_include_init.h" />
-    <ClInclude Include="..\..\..\..\OneDrive\Desktop\Новая папка\client_resource_init.h" />
-    <ClInclude Include="..\..\..\..\OneDrive\Desktop\Новая папка\server_include_init.h" />
-    <ClInclude Include="..\..\..\..\OneDrive\Desktop\Новая папка\server_resource_init.h" />
+    <ClInclude Include="client_include_init.h" />
+    <ClInclude Include="client_resource_init.h" />
     <ClInclude Include="cltStart.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="server_include_init.h" />
+    <ClInclude Include="server_resource_init.h" />
     <ClInclude Include="servStart.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="winsock.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\OneDrive\Desktop\Новая папка\sockExt_clientInit.cpp" />
-    <ClCompile Include="..\..\..\..\OneDrive\Desktop\Новая папка\sockExt_servInit.cpp" />
+    <ClCompile Include="sockExt_clientInit.cpp" />
+    <ClCompile Include="sockExt_servInit.cpp" />
     <ClCompile Include="winsock.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="winsock.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\OneDrive\Desktop\dev\icons\umaru.ico" />
     <Image Include="small.ico" />
+    <Image Include="umaru.ico" />
     <Image Include="winsock.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
